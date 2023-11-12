@@ -10,6 +10,7 @@ export const HeaderSection = styled.header`
   padding-top: 20px;
   padding-bottom: 20px;
   box-shadow: 1px 1px 4px black;
+  background-color: rgb(3, 37, 65);
 `;
 
 export const MainSection = styled.section`
@@ -19,7 +20,7 @@ export const MainSection = styled.section`
 
 export const StyledNavLink = styled(NavLink)`
   &.active {
-    color: red;
+    color: white;
   }
   &:hover,
   :focus {

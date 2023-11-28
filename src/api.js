@@ -1,48 +1,33 @@
 import axios from 'axios';
-axios.defaults.baseURL = 'https://api.themoviedb.org';
 
-export const serviceTrandingMovies = async () => {
-  const END_POINT = '/3/trending/movie/day';
-  const params = new URLSearchParams({
-    api_key: 'c06054d06371161583dd60ed3c3b2b8e',
-  });
-  const response = await axios.get(`${END_POINT}?${params}`);
+axios.defaults.baseURL = 'https://api.themoviedb.org/3';
+axios.defaults.headers.common['Authorization'] =
+  'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZmQ0ODBmZTY3MDE2ODk5NjBmMWQzYjM0YWI0OGNlMCIsInN1YiI6IjY1M2NmYWM5ZTg5NGE2MDBjNTE2MGU0ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.SI4wLOe9-g2O22c_kRD4y1B2Ne0JXL2cyjtZyF8gcYM';
+axios.defaults.params = {
+  language: 'en-US',
+};
+
+export const fechServisMovies = async () => {
+  const response = await axios.get('/trending/movie/day');
   return response.data;
 };
 
-export const serviceSearchMovies = async inputValue => {
-  const END_POINT = '/3/search/movie';
-  const params = new URLSearchParams({
-    api_key: 'c06054d06371161583dd60ed3c3b2b8e',
-    query: inputValue,
-  });
-  const response = await axios.get(`${END_POINT}?${params}`);
+export const fechServisSearchMovie = async searchValue => {
+  const response = await axios.get(`/search/movie?query=${searchValue}`);
   return response.data;
 };
 
-export const serviceMovieDetails = async id => {
-  const END_POINT = '/3/movie/';
-  const params = new URLSearchParams({
-    api_key: 'c06054d06371161583dd60ed3c3b2b8e',
-  });
-  const response = await axios.get(`${END_POINT}${id}?${params}`);
+export const fechServisMovieDetails = async movieId => {
+  const response = await axios.get(`/movie/${movieId}`);
   return response.data;
 };
 
-export const serviseCast = async id => {
-  const END_POINT = `/3/movie/${id}/credits`;
-  const params = new URLSearchParams({
-    api_key: 'c06054d06371161583dd60ed3c3b2b8e',
-  });
-  const response = await axios.get(`${END_POINT}?${params}`);
+export const fechServisMovieCredits = async movieId => {
+  const response = await axios.get(`/movie/${movieId}/credits`);
   return response.data;
 };
 
-export const serviceReviews = async id => {
-  const END_POINT = `/3/movie/${id}/reviews`;
-  const params = new URLSearchParams({
-    api_key: 'c06054d06371161583dd60ed3c3b2b8e',
-  });
-  const response = await axios.get(`${END_POINT}?${params}`);
+export const fechServisMovieReviews = async movieId => {
+  const response = await axios.get(`/movie/${movieId}/reviews`);
   return response.data;
 };

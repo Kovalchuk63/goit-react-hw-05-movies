@@ -6,7 +6,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { SearchForm } from '../components/SearchForm/SearchForm';
 import { MoviesList } from '../components/MoviesList/MoviesList';
 import { ContainerLoader } from 'components/ContainerLoader/ContainerLoader.styled';
-import { fechServisSearchMovie } from 'API';
+import { fechServisSearchMovie } from 'pages/API';
 
 const Movies = () => {
   const [searchMovies, setSearchMovies] = useState([]);

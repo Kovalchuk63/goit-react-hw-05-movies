@@ -3,7 +3,7 @@ import { useState, useEffect, useRef, Suspense } from 'react';
 import { ColorRing } from 'react-loader-spinner';
 import toast, { Toaster } from 'react-hot-toast';
 import { TbCircleArrowLeft } from 'react-icons/tb';
-import { fechServisMovieDetails } from 'API';
+import { fechServisMovieDetails } from 'pages/API';
 import { ContainerLoader } from 'components/ContainerLoader/ContainerLoader.styled';
 import { DetailsOneMovie } from 'components/DetailsOneMovie/DetailsOneMovie';
 import {

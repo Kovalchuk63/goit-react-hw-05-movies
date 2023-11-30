@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { ColorRing } from 'react-loader-spinner';
 import { MoviesList } from 'components/MoviesList/MoviesList';
 
-import { fechServisMovies } from '../API';
+import { fechServisMovies } from './API';
 import { ContainerLoader } from 'components/ContainerLoader/ContainerLoader.styled';
 
 const Home = () => {

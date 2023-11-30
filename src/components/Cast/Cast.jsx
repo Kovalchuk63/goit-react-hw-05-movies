@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { ColorRing } from 'react-loader-spinner';
 import toast, { Toaster } from 'react-hot-toast';
 
-import { fechServisMovieCredits } from 'API';
+import { fechServisMovieCredits } from 'pages/API';
 import { ContainerLoader } from 'components/ContainerLoader/ContainerLoader.styled';
 import {
   ActorImage,
